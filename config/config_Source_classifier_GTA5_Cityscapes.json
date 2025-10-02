@@ -1,0 +1,30 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../../datasets/Cityscapes_test",
+    "data_dir_gta": "../../datasets/GTA5_train_val_test",
+    "labels": "categories",
+    "cache_dir": "../../cache_dir",
+    "log_dir": "../../runs",
+    "log_filename": null,
+
+    "cache": false,
+    "sort": true,
+
+    "prop_full_dataset": 0.2,
+    
+    "save_epochs": [10],
+    
+    "max_epochs": 10,
+    "batch_size": 16,
+    
+    "learning_rate": 0.1,
+    "momentum": 0,   
+    "weight_decay": 1e-2,                                                                                       
+    
+    "validation_interval": 1,
+    "print_predictions": true,
+    "print_validation_interval": 99,
+    
+    "size": [512, 1024]
+}

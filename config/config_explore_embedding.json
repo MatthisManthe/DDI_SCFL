@@ -1,0 +1,24 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir": "../datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1.csv",
+    "cache_dir": "../cache_dir",
+    "log_dir": "../runs",
+    "log_filename": null,
+    "persistent_dataset": false,
+    
+    "embedded_features_folder": "../vgg16_imagenet_embeddings/t1ce_pacmap_vgg16",
+    "embedded_features_file": "pacmap_train_features_3.npy",
+    "sample_file_names": "training_samples.json",
+    "institution_file": "train_samples_inst.npy",
+    "modality": [0,1,2,3],
+    
+    "kmeans": true,
+    "kmeans_centers": 2,
+    "per_cluster_measures": true,
+    "measures": [],
+    
+    
+    "size": [224, 224]
+}

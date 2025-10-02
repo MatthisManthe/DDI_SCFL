@@ -1,0 +1,37 @@
+{
+    "device": "cuda:0",
+    
+    "switch_class": "all",
+    "ratio_switch": 0.5,
+    "datasets_path": "../datasets",
+    
+    "log_dir": "../runs",
+    "log_filename": "Switched_MNIST_standard_GMM_fed_iid",
+    "save": true,
+    
+    "standard_image": true,
+    
+    "train": true,
+    "fed": true,
+    "iid": true,
+    "lr": 0.1,
+    "nb_clients": 10,
+    "rand_init": false,
+    "trained_model_path": "../runs/Kmeans_Switch_class_MNIST.py/Switched_MNIST_standard_GMM_train/cnn.pth",
+    
+    "clustering": "GMM",
+    "cov_type": "diag",
+    
+    "nb_clusters_all_classes": 10,
+    "vs": "class",
+    "all_classes": true,
+    
+    "nb_clusters": 2,
+    "per_class": true,
+    "layerwise": true,
+    
+    "pacmap": true,
+    "color": ["class", "data_origin"],
+    
+    "save_gradients_norm": true
+}

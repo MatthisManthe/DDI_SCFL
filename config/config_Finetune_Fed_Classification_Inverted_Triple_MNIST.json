@@ -1,0 +1,25 @@
+{
+    "device": "cuda:0",
+    
+    
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "dataset": "../../datasets/Triple_MNIST",
+    "max_rounds": 60,
+    "batch_size": 16,
+    "learning_rate": 0.32,
+    "momentum": 0,
+    
+    "dropout": 0.1,
+    
+    "generate_partitioning": false,
+    "partitioning_file": "../../datasets/Triple_MNIST/Full_non_IID_partitioning/train_partitioning_Inverted_Triple_MNIST.json",
+    "iid": false,
+    "dirichlet": 0.25,
+    "nb_clients": 10,
+    
+    "model_dir": "../../trained_models/Inverted_Triple_MNIST_Classif/Fed_Classification_Inverted_Triple_MNIST_usable_models/runs/Fed_Classification_Inverted_Triple_MNIST.py/_partitioning_file_datasetsTriple_MNISTFull_non_IID_partitioningtrain_partitioning_Inverted_Triple_MNISTjson",
+    "split_round": 20,
+    "nb_restart": 2
+}

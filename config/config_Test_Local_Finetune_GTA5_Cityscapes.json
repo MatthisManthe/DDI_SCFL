@@ -1,0 +1,35 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../../datasets/Cityscapes_test",
+    "data_dir_gta": "../../datasets/GTA5_train_val_test",
+    "labels": "categories",
+    "cache_dir": "../../cache_dir",
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "split": "test",
+    "generate_split": false,
+    "partitioning_dir": "../../datasets/Cityscapes_test/IID_partitioning",
+    "partition_file": "test_partitioning_GTA_Cityscapes.json",
+    "iid": false,
+    "dirichlet": 0,
+    
+    "perso_models_dir": "../../trained_models/Cityscapes/With_dropout/Final_Local_Finetune_EfficientVIT_GTA_Cityscapes_SGD/runs/Local_Finetune_GTA5_Cityscapes.py/_learning_rate_0.032_partitioning_1",
+    "model_file": "best_model_client_#.pth",
+    "nb_clients": 10,
+    "result_folder_name": "Inference_results_per_sample",
+    
+    "cache": false,
+    "sort": true,
+
+    "batch_size": 4,
+
+    "model": "EfficientVIT",
+    "filters": [16, 32, 32, 64],
+    "strides": [1, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3],
+    "norm": "ln2d",
+    
+    "size": [512, 1024]
+}

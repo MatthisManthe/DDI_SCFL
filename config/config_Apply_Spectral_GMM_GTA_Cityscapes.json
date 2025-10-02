@@ -1,0 +1,16 @@
+{
+    "cluster_dir": "/home/manthe/Documents/PhD_works/_seed_0_dimension_reduction_0_model_dir_2_model_init_0",
+    "config_file": "_seed_0_dimension_reduction_0_model_dir_2_model_init_0.json",
+    "save_in_cluster_dir": true,
+    "config_name_cluster_dir": true,
+    
+    "apply_on_split": "val",
+    
+    "cluster_assignement": "knn",
+    "nb_neighbours": 5,
+    
+    "supersede_model_dir": "/home/manthe/Documents/PhD_works/advanced_sample_level_cffl/trained_models/Cityscapes/With_dropout/Fed_EfficientVIT_GTA_Cityscapes_SGD_final/runs/Fed_GTA5_Cityscapes.py/_learning_rate_0.32_partitioning_file_datasetsCityscapes_testIID_partitioningtrain_partitioning_GTA_Cityscapesjson",
+    "supersede_data_dir_cityscapes": "../datasets/Cityscapes_test",
+    "supersede_data_dir_gta": "../datasets/GTA5_train_val_test",
+    "supersede_cache": "None"
+}

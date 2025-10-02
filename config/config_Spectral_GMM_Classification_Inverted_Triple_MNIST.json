@@ -1,0 +1,34 @@
+{
+    "device": "cuda:0",
+    
+    "dataset": "../datasets/Triple_MNIST",
+    "log_dir": "../runs",
+    "log_filename": null,
+    "save": true,
+    
+    "model_dir": "../trained_models/Inverted_Triple_MNIST_Classif/Fed_Classification_Inverted_Triple_MNIST_usable_models/runs/Fed_Classification_Inverted_Triple_MNIST.py/_partitioning_file_datasetsTriple_MNISTIID_partitioningtrain_partitioning_Inverted_Triple_MNISTjson",
+    "split": "val",
+    "rand_init": false,
+    "trained_model_file": "model_restart_0.pth",
+    "subset_classes": 0,
+    
+    "dimension_reduction": "rien",
+    "dimension": 7000,
+    "clustering": "GMM",
+    "linkage": "complete",
+    "cov_type": "diag",
+    "init_gmm": "kmeans",
+    "normalize_gradients": true,
+    
+    "seed": 2,
+    
+    "explore_embedding": true,
+    "pick_radius": 10,
+    
+    "nb_clusters": 2,
+    "plain_gradient_clustering": true,
+    "per_class": true,
+    "explore_embedding_per_class": false,
+    
+    "nb_spectral_cluster": 2
+}

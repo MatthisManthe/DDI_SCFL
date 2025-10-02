@@ -1,0 +1,44 @@
+{
+    "generate_dataset": false,
+    "datasets_path": "../../datasets",
+    "multimnist_path": "Triple_MNIST_0134",
+    "num_digit": 3,
+    "selected_digits": [0, 1, 3, 4],
+    "image_size": [64, 96],
+    "num_image_per_class_train": 50,
+    "num_image_per_class_val": 20,
+    "num_image_per_class_test": 20,
+    "seed": 123,
+    "save_type": "numpy",
+    "shuffle": true,
+    
+    "alter_dataset": true,
+    "paths_to_dataset": [
+        "../../datasets/Triple_MNIST_0134/train",
+        "../../datasets/Triple_MNIST_0134/val",
+        "../../datasets/Triple_MNIST_0134/test"  
+    ],
+    "to_alter": "images",
+    "alter_seed": 125,
+    
+    "half_gaussian_noise": false,
+    "full_gaussian_noise": false,
+    "sigma": 50.0,
+    
+    "half_glass_noise": false,
+    "full_glass_noise": false,
+    "severity_glass": 2,
+    
+    "half_spatter": false,
+    "full_spatter": false,
+    "severity_spatter": 3,
+    
+    "half_canny": false,
+    "full_canny": false,
+    
+    "half_speckle": true,
+    "full_speckle": false,
+    "severity_speckle": 3,
+    
+    "show": false
+}

@@ -1,0 +1,38 @@
+{
+    "device": "cuda:0",
+    
+    
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "dataset": "../../datasets/Triple_MNIST_0134",
+    "images_name": "images.npy",
+    "digits": [0, 1, 3, 4],
+    "invert": true,
+    "flip_horizontal": false,
+    "flip_vertical": false,
+    "flip_90": false,
+    
+    "previous_train_dir": "../../trained_models/TripleMNIST_Segmentation/Final_Fed_TripleMNIST_Segmentation_Invert_Decay/runs/Fed_Segmentation_Inverted_Triple_MNIST.py/_learning_rate_1_partitioning_file_1",
+    "model_init": "model_restart_#_round_600.pth",
+    
+    "generate_partitioning": "rien",
+    "partitioning_dir": "../../datasets/Triple_MNIST_0134/Full_non_IID_partitioning",
+    "train_partition_file": "train_partitioning_Inverted_Triple_MNIST.json",
+    "val_partition_file": "val_partitioning_Inverted_Triple_MNIST.json",
+    "test_partition_file": "test_partitioning_Inverted_Triple_MNIST.json",
+    "iid_test_partition_file": "../../datasets/Triple_MNIST_0134/IID_partitioning/test_partitioning_Inverted_Triple_MNIST.json",
+    "iid": false,
+    "fraction": null,
+    "dirichlet": 0,
+    "nb_clients": 10,
+    
+    "split_round": 600,
+    "max_rounds": 700,
+    "save_rounds": [650],
+    "batch_size": 16,
+    "learning_rate": 0.032,
+    "momentum": 0,
+
+    "nb_restart": 3
+}

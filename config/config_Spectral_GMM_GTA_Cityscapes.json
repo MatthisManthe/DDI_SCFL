@@ -1,0 +1,61 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../datasets/Cityscapes_test",
+    "data_dir_gta": "../datasets/GTA5_train_val_test",
+    
+    "log_dir": "../runs",
+    "log_filename": null,
+    "save": true,
+    
+    "cache": false,
+    "sort": true,
+    
+    "model_dir": "../../trained_models/Cityscapes/Fed_EfficientVIT_GTA_Cityscapes_SGD_final/runs/Fed_GTA5_Cityscapes.py/_learning_rate_0.32_partitioning_file_datasetsCityscapes_testFull_non_IID_partitioningtrain_partitioning_GTA_Cityscapesjson",
+    "split": "train",
+    "rand_init": false,
+    "trained_model_file": "best_model_epoch_400.pth",
+    "labels": "categories",
+    "subset_classes": [1, 5],
+    "model": "EfficientVIT",
+    "norm": "ln2d",
+    "filters": [
+        16,
+        32,
+        32,
+        64
+    ],
+    "strides": [
+        1,
+        2,
+        2,
+        2
+    ],
+    "kernel_sizes": [
+        3,
+        3,
+        3,
+        3
+    ],
+    "size": [
+        512,
+        1024
+    ],
+    "normalization": "imagenet",
+    "num_workers": 8,
+    "dimension_reduction": "rien",
+    "dimension": 7000,
+    "clustering": "GMM",
+    "linkage": "complete",
+    "cov_type": "diag",
+    "init_gmm": "kmeans",
+    "normalize_gradients": true,
+    "seed": 42,
+    "explore_embedding": true,
+    "pick_radius": 10,
+    "nb_clusters": 2,
+    "plain_gradient_clustering": true,
+    "per_class": true,
+    "explore_embedding_per_class": false,
+    "nb_spectral_cluster": 2
+}

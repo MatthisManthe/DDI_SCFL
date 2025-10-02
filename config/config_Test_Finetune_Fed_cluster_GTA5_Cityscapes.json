@@ -1,0 +1,44 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../datasets/Cityscapes_test",
+    "data_dir_gta": "../datasets/GTA5_train_val_test",
+    "labels": "categories",
+    "cache_dir": "../cache_dir",
+    "log_dir": "../runs",
+    "log_filename": null,
+    
+    "split": "test",
+    
+    "oracle_eval": false,
+    "clustering_dir": "../trained_models/Cityscapes/_iid_True_learning_rate_0.1_labels_categories/_model_dir__iid_True_learning_rate_0.1_labels_categories_trained_model_file_best_model_epoch_200.pth",
+    "clustered_images" : "clustered_image_paths.json",
+    
+    "clustered_models_dir": "../trained_models/Cityscapes/With_dropout/Prior_Finetune_Fed_EfficientVIT_GTA_Cityscapes_SGD_Full_non_IID/runs/Finetune_Fed_cluster_GTA5_Cityscapes.py/_learning_rate_0.32_model_init_best_model_epoch_400pth",
+    "model_file": "best_model_cluster_#.pth",
+    "clusters": ["Cityscapes", "GTA"],
+    "result_folder_name": "Inference_results_per_sample",
+    
+    "cache": false,
+    "sort": true,
+    
+    "add_../_to_paths": true,
+    "per_validation_sample_result": true,
+    "validation_mode": "on_IID",
+    
+    "dropout": 0.1,
+    "batch_size": 4,
+    
+    "nb_mc_samples": 10,
+    
+    "source_classifier_path": "../trained_models/Cityscapes/With_dropout/Final_Fed_source_classifier_EfficientVIT_GTA_Cityscapes_SGD_Dirichlet_non_IID/runs/Fed_cluster_classifier_GTA5_Cityscapes.py/_learning_rate_0.005_clustering_2/model.pth",
+    "test_IID_split_path": "../datasets/Cityscapes_test/IID_partitioning/test_partitioning_GTA_Cityscapes.json",
+    
+    "model": "EfficientVIT",
+    "filters": [16, 32, 32, 64],
+    "strides": [1, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3],
+    "norm": "ln2d",
+    
+    "size": [512, 1024]
+}

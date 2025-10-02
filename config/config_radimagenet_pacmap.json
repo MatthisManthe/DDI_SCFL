@@ -1,0 +1,24 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir": "../datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1.csv",
+    "cache_dir": "../cache_dir",
+    "log_dir": "../runs",
+    "log_filename": null,
+    "persistent_dataset": false,
+    
+    "prop_full_dataset": 1.0,
+    "ratio_train": 0.8,
+    
+    "compute_features": true,
+    "normalization": "01",
+    "modality": 1,
+    
+    "model_file": "../trained_models/radimagenet/ResNet50_RadImagenet.pth",
+    "features_folder": "../runs/RadImagenet_pacmap.py/flair_features_rad",
+    "features_file": "features_block_#.pt",
+    "class_features_file": "class_features.pt",
+    
+    "size": [224, 224]
+}

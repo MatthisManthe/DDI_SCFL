@@ -1,0 +1,48 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../../datasets/Cityscapes_test",
+    "data_dir_gta": "../../datasets/GTA5_train_val_test",
+    "labels": "categories",
+    "cache_dir": "../../cache_dir",
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "cache": false,
+    "sort": true,
+    
+    "generate_partitioning": false,
+    "partitioning_file": "../../datasets/Cityscapes_test/IID_partitioning/train_partitioning_GTA_Cityscapes.json",
+    "iid": false,
+    "dirichlet": 0,
+    "nb_clients": 10,
+    
+    "save_epochs": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    
+    "prop_full_dataset": 1.0,
+    "ratio_train": 0.8,
+    
+    "max_epochs": 1000,
+    "batch_size": 2,
+    
+    "dropout": 0.1,
+    
+    "model": "EfficientVIT",
+    "filters": [16, 32, 32, 64],
+    "strides": [1, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3],
+    "norm": "ln2d",
+    
+    "learning_rate": 0.1,
+    "momentum": 0,
+    "weight_decay": 1e-6,
+    
+    "lr_scheduler": "exp_decay",
+    "gamma": 0.9985,
+    
+    "validation_interval": 1,
+    "print_predictions": true,
+    "print_validation_interval": 99,
+    
+    "size": [512, 1024]
+}

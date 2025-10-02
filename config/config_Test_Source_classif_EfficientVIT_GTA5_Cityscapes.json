@@ -1,0 +1,17 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../../datasets/Cityscapes_test",
+    "data_dir_gta": "../../datasets/GTA5_train_val_test",
+    "labels": "categories",
+    "cache_dir": "../../cache_dir",
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "sort": true,
+    "cache": false,
+     
+    "source_classifier_path": "../../trained_models/Cityscapes/With_dropout/Final_Fed_source_classifier_EfficientVIT_GTA_Cityscapes_SGD_Full_non_IID/runs/Fed_cluster_classifier_GTA5_Cityscapes.py/_learning_rate_0.005_clustering_1/model.pth",
+    "invert_classes": true,
+    "size": [512, 1024]
+}

@@ -1,0 +1,28 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir": "../datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1.csv",
+    "cache_dir": "../cache_dir",
+    "log_dir": "../runs",
+    "log_filename": null,
+    "persistent_dataset": false,
+    
+    "prop_full_dataset": 1.0,
+    "ratio_train": 0.8,
+    
+    "compute_features": false,
+    "modality": 2,
+    
+    "features_folder": ["../runs/DeepPIC_variants.py/flair_features_vgg16",
+                        "../runs/DeepPIC_variants.py/t1_features_vgg16",
+                        "../runs/DeepPIC_variants.py/t1ce_features_vgg16",
+                        "../runs/DeepPIC_variants.py/t2_features_vgg16"],
+    "features_file": "features_block_#.pt",
+    "class_features_file": "class_features_block_#.pt",
+    
+    "features": [1,2,3],
+    "class_features": [0,1],
+    
+    "size": [224, 224]
+}

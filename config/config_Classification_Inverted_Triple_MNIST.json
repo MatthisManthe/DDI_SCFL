@@ -1,0 +1,18 @@
+{
+    "device": "cuda:0",
+    
+    
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "dataset": "../../datasets/Triple_MNIST",
+    "batch_size": 16,
+    "learning_rate": 0.02,
+    "momentum": 0.9,
+    "nb_epoch": 50,
+    
+    "dropout": 0.1,
+    
+    "model_path": "...",
+    "test": true
+}

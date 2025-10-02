@@ -1,0 +1,22 @@
+axes.spines.left : False
+axes.spines.right : False
+axes.spines.top : False
+axes.spines.bottom : False
+axes.xmargin : 0
+axes.ymargin : 0
+
+ytick.major.left : False
+ytick.major.right : False
+ytick.minor.left : False
+ytick.minor.right : False
+xtick.major.top : False
+xtick.major.bottom : False
+xtick.minor.top : False
+xtick.minor.bottom : False
+
+figure.subplot.wspace : 0.01
+figure.subplot.hspace : 0.1
+figure.subplot.top : 0.95
+figure.subplot.bottom : 0.02
+figure.subplot.left : 0.05
+figure.subplot.right : 0.95

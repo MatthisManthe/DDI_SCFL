@@ -1,0 +1,43 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir": "../datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1.csv",
+    "cache_dir": "../cache_dir",
+    "log_dir": "../runs",
+    "log_filename": null,
+    "persistent_dataset": false,
+
+    "model_type": "ae",
+    "alpha_kl": 0.001, 
+    
+    "prop_full_dataset": 1.0,
+    "ratio_train": 0.8,
+    
+    "max_epochs": 500,
+    "nb_gpus": 1,
+    "batch_size_per_gpu": 32,
+    
+    "filters": [16, 32, 64, 64, 16],
+    "strides": [1, 2, 2, 1],
+    "kernel_sizes": [5, 5, 5, 1],
+    "bottleneck_size": 512,
+    
+    "optim":"sgd",
+    "learning_rate": 0.1,
+    "weight_decay": 1e-5,
+    
+    "lr_scheduler": "exp_decay",
+    "gamma": 0.995,
+    
+    "norm": "BATCH",
+    
+    "losses": ["mse", "perceptual"],
+    "loss_coefs": [0.5, 0.5],
+    
+    
+    "validation_interval": 1,
+    "print_validation_interval": 249,
+    
+    "size": [224, 224]
+}

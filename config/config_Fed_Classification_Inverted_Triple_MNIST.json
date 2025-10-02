@@ -1,0 +1,26 @@
+{
+    "device": "cuda:0",
+    
+    
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "dataset": "../../datasets/Triple_MNIST",
+    "max_rounds": 20,
+    "save_rounds": [5, 10, 20, 30, 40, 50],
+    "batch_size": 16,
+    "learning_rate": 0.4,
+    "momentum": 0,
+    
+    "dropout": 0.1,
+    
+    "generate_partitioning": false,
+    "partitioning_file": "../../datasets/Triple_MNIST/Dirichlet_non_IID_partitioning/train_partitioning_Inverted_Triple_MNIST.json",
+    "iid": false,
+    "fraction": 0.9,
+    "dirichlet": 0.25,
+    "nb_clients": 10,
+    
+    "model_path": "...",
+    "nb_restart": 2
+}

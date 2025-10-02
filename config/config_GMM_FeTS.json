@@ -1,0 +1,50 @@
+{
+    "device": "cuda:0",
+    "tranform_device": "cuda:0",
+    
+    "data_dir": "../datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1_folds/partitioning_1_train_fold_0.csv",
+    
+    "prop_full_dataset": 1.0,
+    "ratio_train": 0.8,
+    
+    "log_dir": "../runs",
+    "log_filename": null,
+    "save": true,
+    
+    "model_dir": "../trained_models/BraTS/Small_UNet_whole_volume",
+    "split": "train",
+    "rand_init": false,
+    "trained_model_file": "best_model.pth",
+    "cache": false,
+    
+    "model": "UNet",
+    "filters": [16, 16, 32, 64],
+    "strides": [1, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3],
+    "roi_size": [192, 224, 160],
+    "sliding_window_overlap": 0.5,
+    "loss": "dice",
+    
+    "clustering": "GMM",
+    "cov_type": "diag",
+    "normalize_gradients": true,
+    "layers": "ends",
+    
+    "seed": 2,
+    
+    "save_gradients_norm": true,
+    
+    "pacmap": true,
+    "explore_raw_pacmap": false,
+    
+    "nb_clusters_all_classes": 2,
+    "all_classes": false,
+    "explore_embedding_all_classes": false,
+    "pick_radius": 10,
+    
+    "nb_clusters": 2,
+    "per_class": true,
+    "explore_embedding_per_class": false
+ 
+}

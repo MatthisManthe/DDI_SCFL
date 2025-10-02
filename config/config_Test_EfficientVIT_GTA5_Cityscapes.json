@@ -1,0 +1,21 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../../datasets/Cityscapes_test",
+    "data_dir_gta": "../../datasets/GTA5_train_val_test",
+    "labels": "categories",
+    "cache_dir": "../../cache_dir",
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "sort": true,
+    "cache": false,
+    
+    "split": "test", 
+    "model_path": "../../trained_models/Cityscapes/With_dropout/SCAFFOLD_EfficientVIT_GTA_Cityscapes_SGD_final/runs/SCAFFOLD_GTA5_Cityscapes.py/_learning_rate_0.1_partitioning_file_datasetsCityscapes_testDirichlet_non_IID_partitioningtrain_partitioning_GTA_Cityscapesjson",
+    "model_file": "best_model_epoch_700.pth",
+    
+    "model": "EfficientVIT",
+    "norm": "ln2d",
+    "size": [512, 1024]
+}

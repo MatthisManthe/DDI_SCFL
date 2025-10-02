@@ -1,0 +1,32 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../datasets/Cityscapes",
+    "data_dir_gta": "../datasets/GTA5_train_val",
+    
+    "log_dir": "../runs",
+    "log_filename": null,
+    "save": true,
+    
+    "model_dir": "/home/manthe/Documents/PhD_works/advanced_sample_level_cffl/trained_models/Cityscapes/UNet_240k_SGD",
+    "split": "train",
+    "indices_city_file": "_city_samples.npy",
+    "indices_gta_file": "_gta_samples.npy",
+    "rand_init": false,
+    "trained_model_file": "best_model.pth",
+    
+    "model": "UNet",
+    "filters": [8, 16, 32, 64],
+    "strides": [1, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3],
+    "size": [256, 512],
+    
+    "clustering": "GMM",
+    "cov_type": "diag",
+    "normalize_gradients": true,
+    
+    "seed": 0,
+    
+    "test_class": 1
+ 
+}

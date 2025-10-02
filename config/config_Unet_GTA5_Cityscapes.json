@@ -1,0 +1,39 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir_cityscapes": "../../datasets/Cityscapes",
+    "data_dir_gta": "../../datasets/GTA5_train_val",
+    "labels": "trainId",
+    "cache_dir": "../../cache_dir",
+    "log_dir": "../../runs",
+    "log_filename": null,
+    
+    "sort": true,
+    
+    "save_epochs": [100, 200],
+    
+    "prop_full_dataset": 1.0,
+    "ratio_train": 0.8,
+    
+    "max_epochs": 300,
+    "nb_gpus": 1,
+    "batch_size_per_gpu": 2,
+    
+    "filters": [16, 32, 32, 64],
+    "strides": [1, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3],
+
+    "optim":"adam",
+    "learning_rate": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 1e-6,
+    
+    "lr_scheduler": "exp_decay",
+    "gamma": 0.995,
+    
+    "validation_interval": 1,
+    "print_predictions": true,
+    "print_validation_interval": 99,
+    
+    "size": [256, 512]
+}
