@@ -92,8 +92,9 @@ GTA5
 	 └── test
 ```
 
-As we used a subset of the images of the original dataset, the list of randomly selected images for each set can be found in ```/GTA5_selected_samples```.
+As we used a subset of the images of the original dataset, the list of randomly selected images for each set can be found in the folder ```/Cityscapes_GTA5_data/GTA5_selected_samples```.
 
+The generated partitionings (*IID*, *Full non IID* and *Dirichlet non IID*) for Cityscapes+GTA5 can be found in the folder ```Cityscapes_GTA5_data/Cityscapes_GTA5_partitionings```.
 
 ## Notable python codes
 - ```/source/data/generator_multiple_mnist.py``` contains the code to generate the Triple MNIST segmentation dataset. **The gray-scale inversions described in the paper were performed when loading the dataset in the training codes of the experiments, not at the creation of the dataset.**
