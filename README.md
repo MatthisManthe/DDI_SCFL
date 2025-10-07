@@ -15,11 +15,15 @@ To reproduce the experiments obtained with SCFL in our paper GTA5+Cityscapes, on
 ## Launching an experiment
 All these python files can be ran using the following typical command
 
-```python3 NAME.py --config_path CONFIG_NAME.json```
+```
+python3 NAME.py --config_path CONFIG_NAME.json
+```
 
-which, for FedAvg using the config file for the FeTS2022 challenge partitioning defined in ```config_FedAvg.json```, becomes 
+which, for FedAvg on the combination of GTA5+Cityscapes, becomes 
 
-```python3 source/model_training/Fed_GTA5_Cityscapes.py --config_path config/config_Fed_GTA5_Cityscapes.json```
+```
+python3 source/model_training/Fed_GTA5_Cityscapes.py --config_path config/config_Fed_GTA5_Cityscapes.json
+```
 
 One needs to create a ```/runs``` directory for experiment folders to be created every time a code is ran, containing everything related to the experiment instance (tensorboard, model weights, copy of the config file, figures, etc.).
  
