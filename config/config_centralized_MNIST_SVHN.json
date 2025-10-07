@@ -1,8 +1,0 @@
-{
-    "device": "cuda:0",
-    "log_dir": "../runs",
-    "log_filename": null,
-    "nb_clusters": 2,
-    "train": false,
-    "layerwise_clustering": true
-}

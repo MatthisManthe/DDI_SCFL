@@ -3,36 +3,99 @@
 This is the official code base for the paper 
 
 > [Matthis Manthe et al., “Deep Domain Isolation and Sample Clustered Federated Learning for Semantic Segmentation,” in Machine Learning and Knowledge Discovery in Databases. Research Track, ed. Albert Bifet et al. (Springer Nature Switzerland, 2024)](https://doi.org/10.1007/978-3-031-70359-1_22)
-
-
-## Notable python codes
-- ```/source/data/generator_multiple_mnist.py``` contains the code to generate the Triple MNIST segmentation dataset. While the gray-scale inversions were performed when loading the dataset in the training codes for these experiments, we also added lighter types of noise we explored a bit (speckle, gaussian noise, canny edges, etc.) to build additional feature domains, but did not make it into the publication.
-- ```/source/data/partitioning_utils.py``` contains the code to generate the IID, Full non IID and Dirichlet non IID distributions from an existing dataset.
- 
-## Datasets
-- The actual datasets used in these experiments can be found on zenovo:
-1. Triple MNIST seg,
-2. GTA+Cityscapes.
-
-
 ## Code base structure
 The structure of the code base is simple
-- Directly in the ```/source``` folder is one python code for each training algorithm tested in the paper: *Centralized*, *Local training on institution 1*, *FedAvg* (with fixed local epochs and local iterations), *FedAvg IID*, *FedAdam*, *FedNova*, *SCAFFOLD*, *q-FedAvg*, *FedPIDAvg*, *Local finetuning*, *Ditto*, *FedPer* (accounting for *FedPer* and *LG-FedAvg*), *CFL* and *prior clustered FedAvg*,
-- In the directory ```source/config``` can be found one json config file for each training algorithm necessary to start an experiment. They are copies of each config file selected through grid searches, used to generate the final results of our paper (for one fold). Note that the hyperparameters for personalized methods were selected per institution, requiring the full grid search to replicate the results of the paper.
-- In the folder ```/source/test``` are the testing codes producing final performances based on the output of training algorithms (with associated ```/source/test/config``` folder with json files).
+- Directly in the ```/source/model_training``` folder are different python codes to train a segmentation model with the variety of algorithms, datasets and data distributions described in the paper (*Centralized*, *FedAvg*, *SCAFFOLD*, *Local finetuning*, *CFL*, and *SCFL*) as well as the code to train a domain classifier in a federated fashion,
+- In the folder ```/source/model_test``` are the testing codes producing final performances based on the output of training algorithms,
+- In the ```/source``` folder directly can be found the two python codes used to compute a federated clustering of images using *DDI* as described in the paper (one for each dataset).
+- In the directory ```/config``` can be found one example json config file for each executable python code.
 
-The fold splits of FeTS2022 dataset used in cross-validations can be found in the folder ```/data_folds```.
+To reproduce the experiments obtained with SCFL in our paper GTA5+Cityscapes, one would typically have to train a model with *FedAvg* using ```/source/model_training/Fed_GTA5_Cityscapes.py```, compute a federated clustering based on the obtained model using ```/source/Spectral_GMM_GTA_Cityscapes.py```, finetune a federated model per cluster using ```/source/model_training/Finetune_Fed_cluster_GTA5_Cityscapes.py``` and test them using ```/source/model_test/Test_Finetune_Fed_cluster_GTA5_Cityscapes.py``` (the crunch was real ...).
 
 ## Launching an experiment
 All these python files can be ran using the following typical command
 
-```python3 NAME.py --config_path config/CONFIG_NAME.json```
+```python3 NAME.py --config_path CONFIG_NAME.json```
 
 which, for FedAvg using the config file for the FeTS2022 challenge partitioning defined in ```config_FedAvg.json```, becomes 
 
-```python3 Train_FedAvg_3D_multi_gpu.py --config_path config/config_FedAvg.json```
+```python3 source/model_training/Fed_GTA5_Cityscapes.py --config_path config/config_Fed_GTA5_Cityscapes.json```
 
 One needs to create a ```/runs``` directory for experiment folders to be created every time a code is ran, containing everything related to the experiment instance (tensorboard, model weights, copy of the config file, figures, etc.).
+ 
+## Datasets
+The Triple MNIST Segmentation 0134 dataset used in the experiment can be found on zenodo: https://doi.org/10.5281/zenodo.17276525.
+
+To reproduce the experiments on the combination of Cityscapes and GTA5 datasets.
+- Based on the Cityscapes dataset from "Marius Cordts et al., “The Cityscapes Dataset for Semantic Urban Scene Understanding,” 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), IEEE, June 2016, 3213–23, https://doi.org/10.1109/CVPR.2016.350.", one must structure the downloaded folder as follows 
+```
+Cityscapes
+├── gtFine
+│   ├── train
+│   ├── val
+│   └── test
+└── leftImg8bit
+	 ├── train
+ 	 ├── val
+	 └── test
+```
+
+with the following selected cities in each of the ```train```, ```val``` and ```test``` directories, with images and segmentations maps in the ```leftImg8bit``` and ```gtFine``` directories respectively
+```
+train
+├── aachen
+├── bochum
+├── bremen
+├── cologne
+├── darmstadt
+├── erfurt
+├── hamburg
+├── hanover
+├── jena
+├── krefeld
+├── strasbourg
+├── stuttgart
+├── tubingen
+├── ulm
+└── zurich
+```
+
+```
+val
+├── dusseldorf
+├── monchengladbach
+└── weimar
+```
+
+```
+test
+├── frankfurt
+├── lindau
+└── munster
+```
+
+- Based on the GTA5 dataset from "Stephan R. Richter et al., “Playing for Data: Ground Truth from Computer Games,” 2016 European Conference on Computer Vision (ECCV), arXiv:1608.02192", one must structure the downloaded folder as follows
+
+```
+GTA5
+├── images
+│   ├── train
+│   ├── val
+│   └── test
+└── labels
+	 ├── train
+ 	 ├── val
+	 └── test
+```
+
+As we used a subset of the images of the original dataset, the list of randomly selected images for each set can be found in ```/GTA5_selected_samples```.
+
+
+## Notable python codes
+- ```/source/data/generator_multiple_mnist.py``` contains the code to generate the Triple MNIST segmentation dataset. **The gray-scale inversions described in the paper were performed when loading the dataset in the training codes of the experiments, not at the creation of the dataset.**
+- ```/source/data/partitioning_utils.py``` contains the code to generate the IID, Full non IID and Dirichlet non IID distributions from an existing dataset.
+
+
 
 ## Dependencies
 The main frameworks used are essentially 
