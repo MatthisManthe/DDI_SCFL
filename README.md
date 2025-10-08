@@ -10,7 +10,7 @@ The structure of the code base is simple
 - In the ```/source``` folder directly can be found the two python codes used to compute a federated clustering of images using *DDI* as described in the paper (one for each dataset).
 - In the directory ```/config``` can be found one example json config file for each executable python code.
 
-To reproduce the experiments obtained with SCFL in our paper GTA5+Cityscapes, one would typically have to train a model with *FedAvg* using ```/source/model_training/Fed_GTA5_Cityscapes.py```, compute a federated clustering based on the obtained model using ```/source/Spectral_GMM_GTA_Cityscapes.py```, finetune a federated model per cluster using ```/source/model_training/Finetune_Fed_cluster_GTA5_Cityscapes.py``` and test them using ```/source/model_test/Test_Finetune_Fed_cluster_GTA5_Cityscapes.py``` (the crunch was real ...).
+To reproduce the experiments obtained with SCFL in our paper GTA5+Cityscapes, one would typically have to train a model with *FedAvg* using ```/source/model_training/Fed_GTA5_Cityscapes.py```, compute a federated clustering based on the obtained model using ```/source/Spectral_GMM_GTA_Cityscapes.py```, finetune a federated model per cluster using ```/source/model_training/Finetune_Fed_cluster_GTA5_Cityscapes.py```, train a domain classifier using ```/source/model_training/Fed_cluster_classifier_GTA5_Cityscapes.py``` and test them using ```/source/model_test/Test_Finetune_Fed_cluster_GTA5_Cityscapes.py``` (the crunch was real ...).
 
 ## Launching an experiment
 All these python files can be ran using the following typical command
