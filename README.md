@@ -104,12 +104,12 @@ The generated partitionings (*IID*, *Full non IID* and *Dirichlet non IID*) for 
 
 ## Dependencies
 The main frameworks used are essentially 
+- Python (3.10.13)
 - Pytorch (2.0.1)
 - Torchvision (0.15.2)
 - Monai (1.3.0)
 - Sklearn (1.3.2)
-- Numpy
 
-with additional dependencies with tqdm, glob, pandas, pickle, skimage and pacmap.
+with additional dependencies with numpy, tqdm, glob, pandas, pickle, skimage and pacmap.
 
 
